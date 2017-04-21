@@ -1,0 +1,457 @@
+<html><head></head><body><div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a>loader (v2.1.1)</a>
+</h1>
+<h4>Assets loader.</h4>
+<div class="apidocSectionDiv"><a href="#apidoc.tableOfContents" id="apidoc.tableOfContents"><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.loader">module loader</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.loader.loader">
+            function <span class="apidocSignatureSpan"></span>loader
+            <span class="apidocSignatureSpan">(js, css)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.loader.file">
+            function <span class="apidocSignatureSpan">loader.</span>file
+            <span class="apidocSignatureSpan">(target)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">loader.</span>loader.prototype</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.loader.loader">module loader.loader</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.loader.loader.loader">
+            function <span class="apidocSignatureSpan">loader.</span>loader
+            <span class="apidocSignatureSpan">(js, css)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.loader.loader.file">
+            function <span class="apidocSignatureSpan">loader.loader.</span>file
+            <span class="apidocSignatureSpan">(target)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.loader.loader.prototype">module loader.loader.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.loader.loader.prototype.css">
+            function <span class="apidocSignatureSpan">loader.loader.prototype.</span>css
+            <span class="apidocSignatureSpan">(href)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.loader.loader.prototype.dev">
+            function <span class="apidocSignatureSpan">loader.loader.prototype.</span>dev
+            <span class="apidocSignatureSpan">(prefix)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.loader.loader.prototype.done">
+            function <span class="apidocSignatureSpan">loader.loader.prototype.</span>done
+            <span class="apidocSignatureSpan">(CDNMap, prefix, mini)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.loader.loader.prototype.js">
+            function <span class="apidocSignatureSpan">loader.loader.prototype.</span>js
+            <span class="apidocSignatureSpan">(src)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.loader.loader.prototype.pro">
+            function <span class="apidocSignatureSpan">loader.loader.prototype.</span>pro
+            <span class="apidocSignatureSpan">(CDNMap, prefix)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.loader" id="apidoc.module.loader">module loader</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.loader.loader" id="apidoc.element.loader.loader">
+        function <span class="apidocSignatureSpan"></span>loader
+        <span class="apidocSignatureSpan">(js, css)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">loader = function (js, css) {
+  if (!(this instanceof Loader)) {
+    return new Loader(js, css);
+  }
+
+  var target = {};
+  if (js) {
+    target[path.extname(js)] = js;
+  }
+
+  if (css) {
+    target[path.extname(css)] = css;
+  }
+
+  this.script = {
+    assets: [],
+    target: target[".js"]
+  };
+  this.style = {
+    assets: [],
+    target: target[".css"]
+  };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.loader.file" id="apidoc.element.loader.file">
+        function <span class="apidocSignatureSpan">loader.</span>file
+        <span class="apidocSignatureSpan">(target)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">file = function (target) {
+  return new File(target);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.loader.loader" id="apidoc.module.loader.loader">module loader.loader</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.loader.loader.loader" id="apidoc.element.loader.loader.loader">
+        function <span class="apidocSignatureSpan">loader.</span>loader
+        <span class="apidocSignatureSpan">(js, css)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">loader = function (js, css) {
+  if (!(this instanceof Loader)) {
+    return new Loader(js, css);
+  }
+
+  var target = {};
+  if (js) {
+    target[path.extname(js)] = js;
+  }
+
+  if (css) {
+    target[path.extname(css)] = css;
+  }
+
+  this.script = {
+    assets: [],
+    target: target[".js"]
+  };
+  this.style = {
+    assets: [],
+    target: target[".css"]
+  };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.loader.loader.file" id="apidoc.element.loader.loader.file">
+        function <span class="apidocSignatureSpan">loader.loader.</span>file
+        <span class="apidocSignatureSpan">(target)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">file = function (target) {
+  return new File(target);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.loader.loader.prototype" id="apidoc.module.loader.loader.prototype">module loader.loader.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.loader.loader.prototype.css" id="apidoc.element.loader.loader.prototype.css">
+        function <span class="apidocSignatureSpan">loader.loader.prototype.</span>css
+        <span class="apidocSignatureSpan">(href)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">css = function (href) {
+  this.style.assets.push(href);
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+```
+View:
+```html
+&lt;%- Loader("/assets/scripts/jqueryplugin.js", "/assets/styles/jqueryplugin.css")
+  .js("/assets/scripts/lib/jquery.jmodal.js")
+  .js("/assets/scripts/lib/jquery.mousewheel.js")
+  .js("/assets/scripts/lib/jquery.tagsphere.js")
+  .<span class="apidocCodeKeywordSpan">css</span>("/assets/styles/jquery.autocomplate.css")
+  .done(assetsMap, prefix, combo) %&gt;
+```
+
+åœ¨[loader-builder](https://github.com/JacksonTian/loader-builder)/[loader-connect](https://github.com/JacksonTian/loader-connect)/[
+loader-koa](https://github.com/JacksonTian/loader-koa)çš„æ”¯æŒä¸‹ï¼Œ`.js`æ–¹æ³•ä¹Ÿå¯ä»¥åŠ&nbsp;è½½`.coffee`ã€`.es`ç±»åž‹çš„æ–‡ä»¶ï¼Œ`.css`æ–¹æ³•å¯ä»¥åŠ&nbsp;è½½`.less`ã€`.styl`æ–‡ä»¶ã€‚
+
+### çŽ¯å¢ƒåˆ¤åˆ«
+çŽ¯å¢ƒåˆ¤åˆ«ç”±`done`æ–¹æ³•çš„ç¬¬ä¸‰ä¸ªå‚æ•°å†³å®šï¼Œå¦‚æžœä¼&nbsp;å…¥comboå€¼ï¼Œå°†å†³å®šé€‰ç”¨çº¿ä¸‹ç‰ˆæœ¬è¿˜æ˜¯çº¿ä¸Šç‰ˆæœ¬ã€‚å¦‚æžœä¸ä¼&nbsp;å…¥ç¬¬ä¸‰ä¸ªå‚æ•°ï¼Œå°†ç”±çŽ¯å¢ƒå˜é‡ã€‚å¦‚ä¸‹ä»£ç&nbsp;å®žçŽ°ï¼š
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.loader.loader.prototype.dev" id="apidoc.element.loader.loader.prototype.dev">
+        function <span class="apidocSignatureSpan">loader.loader.prototype.</span>dev
+        <span class="apidocSignatureSpan">(prefix)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">dev = function (prefix) {
+  var html = '';
+  prefix = prefix || '';
+  var version = '?v=' + timestamp;
+
+  var i;
+  for (i = 0; i &lt; this.script.assets.length; i++) {
+    html += '&lt;script src="' + prefix + this.script.assets[i] + version + '"&gt;&lt;/script&gt;\n';
+  }
+  for (i = 0; i &lt; this.style.assets.length; i++) {
+    html += '&lt;link rel="stylesheet" href="' + prefix + this.style.assets[i] + version + '" media="all" /&gt;\n';
+  }
+
+  return html;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.loader.loader.prototype.done" id="apidoc.element.loader.loader.prototype.done">
+        function <span class="apidocSignatureSpan">loader.loader.prototype.</span>done
+        <span class="apidocSignatureSpan">(CDNMap, prefix, mini)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">done = function (CDNMap, prefix, mini) {
+  // ä¼˜å…ˆçº§ï¼š1. å‚æ•°ä¼&nbsp;å…¥ 2. å…¨å±€
+  CDNMap = CDNMap || Loader.CDNMap || {};
+
+  // prefix: 1. å‚æ•°ä¼&nbsp;å…¥ 2. this.prefix 3. å…¨å±€
+  if (prefix === undefined) { // å¯èƒ½ä¼&nbsp;å…¥ ''
+    prefix = this.prefix;
+  }
+
+  if (prefix === undefined) {
+    prefix = Loader.prefix;
+  }
+
+  if (prefix &amp;&amp; prefix.endsWith('/')) {
+    prefix = prefix.slice(0, -1);
+  }
+
+  // mode
+  var mode;
+  if (mini !== undefined) { // å¯èƒ½ä¼&nbsp;å…¥ 0
+    mode = mini;
+  } else if (this.mini !== undefined) {
+    mode = this.mini;
+  } else if (Loader.mini !== undefined) {
+    mode = Loader.mini;
+  } else {
+    mode = process.env.NODE_ENV === "production";
+  }
+
+  return mode ? this.pro(CDNMap, prefix) : this.dev(prefix);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+View:
+```html
+&lt;%- Loader("/assets/scripts/jqueryplugin.js", "/assets/styles/jqueryplugin.css")
+  .js("/assets/scripts/lib/jquery.jmodal.js")
+  .js("/assets/scripts/lib/jquery.mousewheel.js")
+  .js("/assets/scripts/lib/jquery.tagsphere.js")
+  .css("/assets/styles/jquery.autocomplate.css")
+  .<span class="apidocCodeKeywordSpan">done</span>(assetsMap, prefix, combo) %&gt;
+```
+
+åœ¨[loader-builder](https://github.com/JacksonTian/loader-builder)/[loader-connect](https://github.com/JacksonTian/loader-connect)/[
+loader-koa](https://github.com/JacksonTian/loader-koa)çš„æ”¯æŒä¸‹ï¼Œ`.js`æ–¹æ³•ä¹Ÿå¯ä»¥åŠ&nbsp;è½½`.coffee`ã€`.es`ç±»åž‹çš„æ–‡ä»¶ï¼Œ`.css`æ–¹æ³•å¯ä»¥åŠ&nbsp;è½½`.less`ã€`.styl`æ–‡ä»¶ã€‚
+
+### çŽ¯å¢ƒåˆ¤åˆ«
+çŽ¯å¢ƒåˆ¤åˆ«ç”±`done`æ–¹æ³•çš„ç¬¬ä¸‰ä¸ªå‚æ•°å†³å®šï¼Œå¦‚æžœä¼&nbsp;å…¥comboå€¼ï¼Œå°†å†³å®šé€‰ç”¨çº¿ä¸‹ç‰ˆæœ¬è¿˜æ˜¯çº¿ä¸Šç‰ˆæœ¬ã€‚å¦‚æžœä¸ä¼&nbsp;å…¥ç¬¬ä¸‰ä¸ªå‚æ•°ï¼Œå°†ç”±çŽ¯å¢ƒå˜é‡ã€‚å¦‚ä¸‹ä»£ç&nbsp;å®žçŽ°ï¼š
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.loader.loader.prototype.js" id="apidoc.element.loader.loader.prototype.js">
+        function <span class="apidocSignatureSpan">loader.loader.prototype.</span>js
+        <span class="apidocSignatureSpan">(src)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">js = function (src) {
+  this.script.assets.push(src);
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+res.render(tpl, {
+  Loader: require('loader')
+});
+```
+View:
+```html
+&lt;%- Loader("/assets/scripts/jqueryplugin.js", "/assets/styles/jqueryplugin.css")
+  .<span class="apidocCodeKeywordSpan">js</span>("/assets/scripts/lib/jquery.jmodal.js")
+  .js("/assets/scripts/lib/jquery.mousewheel.js")
+  .js("/assets/scripts/lib/jquery.tagsphere.js")
+  .css("/assets/styles/jquery.autocomplate.css")
+  .done(assetsMap, prefix, combo) %&gt;
+```
+
+åœ¨[loader-builder](https://github.com/JacksonTian/loader-builder)/[loader-connect](https://github.com/JacksonTian/loader-connect)/[
+loader-koa](https://github.com/JacksonTian/loader-koa)çš„æ”¯æŒä¸‹ï¼Œ`.js`æ–¹æ³•ä¹Ÿå¯ä»¥åŠ&nbsp;è½½`.coffee`ã€`.es`ç±»åž‹çš„æ–‡ä»¶ï¼Œ`.css`æ–¹æ³•å¯ä»¥åŠ&nbsp;è½½`.less`ã€`.styl`æ–‡ä»¶ã€‚
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.loader.loader.prototype.pro" id="apidoc.element.loader.loader.prototype.pro">
+        function <span class="apidocSignatureSpan">loader.loader.prototype.</span>pro
+        <span class="apidocSignatureSpan">(CDNMap, prefix)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">pro = function (CDNMap, prefix) {
+  prefix = prefix || '';
+  var html = '';
+  var scriptTarget = this.script.target;
+  if (scriptTarget &amp;&amp; CDNMap[scriptTarget]) {
+    html += '&lt;script src="' + prefix + CDNMap[scriptTarget] + '"&gt;&lt;/script&gt;\n';
+  }
+  var styleTarget = this.style.target;
+  if (styleTarget &amp;&amp; CDNMap[styleTarget]) {
+    html += '&lt;link rel="stylesheet" href="' + prefix + CDNMap[styleTarget]  + '" media="all" /&gt;\n';
+  }
+
+  return html;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
+</body></html>
