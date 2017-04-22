@@ -1,6 +1,6 @@
 # npmdoc-loader
 
-#### api documentation for  loader (v2.1.1)  [![npm package](https://img.shields.io/npm/v/npmdoc-loader.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-loader) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-loader.svg)](https://travis-ci.org/npmdoc/node-npmdoc-loader)
+#### api documentation for  [loader (v2.1.1)](https://github.com/JacksonTian/loader#readme)  [![npm package](https://img.shields.io/npm/v/npmdoc-loader.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-loader) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-loader.svg)](https://travis-ci.org/npmdoc/node-npmdoc-loader)
 
 #### Assets loader.
 
@@ -21,35 +21,55 @@
 ```json
 
 {
-    "name": "loader",
-    "version": "2.1.1",
-    "description": "Assets loader.",
-    "main": "index.js",
-    "scripts": {
-        "test": "make test-all"
+    "author": {
+        "name": "Jackson Tian"
     },
-    "keywords": [
-        "Loader"
-    ],
-    "repository": {
-        "type": "git",
-        "url": "git://github.com/JacksonTian/loader.git"
+    "bugs": {
+        "url": "https://github.com/JacksonTian/loader/issues"
     },
     "config": {
         "travis-cov": {
             "threshold": 98
         }
     },
+    "dependencies": {},
+    "description": "Assets loader.",
     "devDependencies": {
-        "mocha": "*",
-        "should": "3.0.x",
-        "istanbul": "*",
-        "travis-cov": "*",
         "coveralls": "*",
-        "mocha-lcov-reporter": "*"
+        "istanbul": "*",
+        "mocha": "*",
+        "mocha-lcov-reporter": "*",
+        "should": "3.0.x",
+        "travis-cov": "*"
     },
-    "author": "Jackson Tian",
-    "license": "MIT"
+    "directories": {},
+    "dist": {
+        "shasum": "8848b12a3f00572e5a4249333ccdac79773fb402",
+        "tarball": "https://registry.npmjs.org/loader/-/loader-2.1.1.tgz"
+    },
+    "gitHead": "1d50cd2c2eb3b802a05b52a4980aa01a33bf9cb9",
+    "homepage": "https://github.com/JacksonTian/loader#readme",
+    "keywords": [
+        "Loader"
+    ],
+    "license": "MIT",
+    "main": "index.js",
+    "maintainers": [
+        {
+            "name": "jacksontian"
+        }
+    ],
+    "name": "loader",
+    "optionalDependencies": {},
+    "repository": {
+        "type": "git",
+        "url": "git://github.com/JacksonTian/loader.git"
+    },
+    "scripts": {
+        "test": "make test-all"
+    },
+    "version": "2.1.1",
+    "bin": {}
 }
 ```
 
